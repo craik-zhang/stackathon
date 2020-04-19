@@ -1,0 +1,14 @@
+{
+    //java jdk地址
+    "java.home":"C:\\Program Files\\Java\\jdk1.8.0_241",
+    //mvaen配置文件路径
+    "java.configuration.maven.userSettings": "C:\\apache-maven-3.6.3\\conf\\settings.xml",
+    //maven命令执行路径
+    "maven.executable.path": "C:\\apache-maven-3.6.3\\bin\\mvn.cmd",
+    "maven.terminal.customEnv": [
+        {
+            "environmentVariable": "JAVA_HOME",
+            "value": "C:\\Program Files\\Java\\jdk1.8.0_241"
+        }
+    ],
+}
