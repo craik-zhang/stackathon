@@ -11,12 +11,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './pages/product/product.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
+import { FooterComponent } from './component/footer/footer.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MoneyPipe } from './pipe/money.pipe';
-import { FooterComponent } from './componet/footer/footer.component';
-import { NavbarComponent } from './componet/navbar/navbar.component';
-import { JwtInterceptor } from './interceptor/jwt.interceptor';
+import {JwtInterceptor} from './interceptor/jwt.interceptor';
 
 @NgModule({
   declarations: [
