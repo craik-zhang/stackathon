@@ -2,12 +2,32 @@
   <a class="navbar-brand" href="#">eStockMart</a>
 
   <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav mr-auto">
+    <!-- <ul class="navbar-nav mr-auto">
       <li class="nav-item active list-inline">
         <a class="nav-link" [routerLink]="['/products']">Products</a>
       </li>
+    </ul> -->
+    <ul class="navbar-nav navbar-left">
+      <li class="nav-item active list-inline">
+        <a class="nav-link" [routerLink]="['/ipos']">IPOs</a>
+      </li>
     </ul>
-    <form class="form-inline mt-2 mt-md-0">
+    <ul class="navbar-nav navbar-left">
+      <li class="nav-item active list-inline">
+        <a class="nav-link" [routerLink]="['/company']">Compare Company</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav navbar-left">
+      <li class="nav-item active list-inline">
+        <a class="nav-link" [routerLink]="['/sector']">Compare Sector</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav navbar-left">
+      <li class="nav-item active list-inline">
+        <a class="nav-link" [routerLink]="['/profile']">Profile</a>
+      </li>
+    </ul>
+    <form class="form-inline mt-2 mt-md-0 ml-auto">
       <button *ngIf="!isSignin" class="btn btn-outline-primary" type="submit" [routerLink]="['/sign-in']">Sign in</button>
       <button *ngIf="isSignin" class="btn btn-outline-secondary" type="submit" (click)="signOut()">Sign Out</button>
     </form>

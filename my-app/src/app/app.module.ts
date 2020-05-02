@@ -17,23 +17,31 @@ import { SignInComponent } from './pages/sign-in/sign-in.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MoneyPipe } from './pipe/money.pipe';
 import {JwtInterceptor} from './interceptor/jwt.interceptor';
+import { IposComponent } from './pages/ipos/ipos.component';
+import { CommonModule } from '@angular/common';
+import { CompanyComponent } from './pages/company/company.component';
+import { SectorComponent } from './pages/sector/sector.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     ProductDetailComponent,
+    IposComponent,
+    CompanyComponent,
+    SectorComponent,
     NavbarComponent,
     FooterComponent,
     SignInComponent,
     MoneyPipe
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
+    CommonModule,
+    FormsModule,
     HttpClientModule,
     NgbAlertModule,
-    FormsModule,
     ReactiveFormsModule
   ],
   providers: [

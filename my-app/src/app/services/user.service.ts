@@ -18,7 +18,7 @@ export class UserService {
     return sessionStorage.getItem('token');
   }
 
-  postSignIn(user) {
+  postSignIn(user: any) {
     return this.http.post(`${environment.baseUrl}/login`, JSON.stringify(user), httpOptions);
   }
 
