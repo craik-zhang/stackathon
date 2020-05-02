@@ -1,4 +1,51 @@
 <h2>IPO List</h2>
 
-<div *ngFor="let ipo of ipos">
-</div>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Company Name</th>
+            <th>Stock Exchange</th>
+            <th>Price per Share</th>
+            <th>No. of Share</th>
+            <th>Date</th>
+            <th>Check Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ipo of ipos">
+            <td>
+                <a [title]="ipo.companyName + ' details'">
+                    {{ ipo.companyName }}
+                </a>
+            </td>
+            <!-- <ng-template [ngTemplateOutlet]="common.template"
+                        [ngTemplateOutletContext]="{$implicit: item}">
+            </ng-template> -->
+            <td>
+                <a *ngIf="ipo.stockExchange">
+                    {{ ipo.stockExchange }}
+                </a>
+            </td>
+            <td>
+                <a *ngIf="ipo.pricePerShare">
+                    {{ ipo.pricePerShare }}
+                </a>
+            </td>
+            <td>
+                <a *ngIf="ipo.shareNumber">
+                    {{ ipo.shareNumber }}
+                </a>
+            </td>
+            <td>
+                <a *ngIf="ipo.openDate">
+                    {{ ipo.openDate }}
+                </a>
+            </td>
+            <td>
+                <button (click)="details()">
+                    Details
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
