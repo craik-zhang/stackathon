@@ -6,21 +6,28 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 /* bootstrap 按需导入，可以使我们最终的打包文件更小 */
 import { NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 
+import { NgxFileUploadCoreModule } from "@ngx-file-upload/core";
+import { NgxFileUploadUiCommonModule } from "@ngx-file-upload/ui";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductComponent } from './pages/product/product.component';
-import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+
+//admin
+import { AdminSignInComponent } from './pages/admin/sign-in/admin-sign-in.component';
+import { UploaderComponent } from './pages/admin/import-data/uploader.component';
+import { MessageService } from './services/admin/message.service';
+import { ProductComponent } from './pages/user/product/product.component';
+import { ProductDetailComponent } from './pages/user/product-detail/product-detail.component';
+import { IposComponent } from './pages/user/ipos/ipos.component';
+import { CompanyComponent } from './pages/user/company/company.component';
+import { SectorComponent } from './pages/user/sector/sector.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { FooterComponent } from './component/footer/footer.component';
-import { SignInComponent } from './pages/sign-in/sign-in.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { SignInComponent } from './pages/user/sign-in/sign-in.component';
 import { MoneyPipe } from './pipe/money.pipe';
-import {JwtInterceptor} from './interceptor/jwt.interceptor';
-import { IposComponent } from './pages/ipos/ipos.component';
 import { CommonModule } from '@angular/common';
-import { CompanyComponent } from './pages/company/company.component';
-import { SectorComponent } from './pages/sector/sector.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { JwtInterceptor } from './interceptor/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -33,7 +40,10 @@ import { SectorComponent } from './pages/sector/sector.component';
     NavbarComponent,
     FooterComponent,
     SignInComponent,
-    MoneyPipe
+    MoneyPipe,
+    //admin
+    AdminSignInComponent,
+    UploaderComponent
   ],
   imports: [
     AppRoutingModule,
@@ -42,9 +52,11 @@ import { SectorComponent } from './pages/sector/sector.component';
     FormsModule,
     HttpClientModule,
     NgbAlertModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxFileUploadCoreModule,
+    NgxFileUploadUiCommonModule,
   ],
-  providers: [
+  providers: [MessageService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]

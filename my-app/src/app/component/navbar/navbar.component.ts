@@ -1,5 +1,4 @@
 import {Component, DoCheck, OnInit} from '@angular/core';
-import {UserService} from '../../services/user.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -12,6 +11,7 @@ export class NavbarComponent implements OnInit, DoCheck {
   constructor(private router: Router) { }
 
    isSignin: boolean;
+   isAdmin: boolean;
 
   ngOnInit(): void {
     if (sessionStorage.getItem('token')){
@@ -19,6 +19,7 @@ export class NavbarComponent implements OnInit, DoCheck {
     } else {
       this.isSignin = false;
     }
+    this.isAdmin = true;
   }
 
   ngDoCheck(): void {

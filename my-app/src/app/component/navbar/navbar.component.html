@@ -2,33 +2,53 @@
   <a class="navbar-brand" href="#">eStockMart</a>
 
   <div class="collapse navbar-collapse" id="navbarCollapse">
-    <!-- <ul class="navbar-nav mr-auto">
-      <li class="nav-item active list-inline">
-        <a class="nav-link" [routerLink]="['/products']">Products</a>
-      </li>
-    </ul> -->
-    <ul class="navbar-nav navbar-left">
+    <ul [hidden]="isAdmin" class="navbar-nav navbar-left">
       <li class="nav-item active list-inline">
         <a class="nav-link" [routerLink]="['/ipos']">IPOs</a>
       </li>
     </ul>
-    <ul class="navbar-nav navbar-left">
+    <ul [hidden]="isAdmin" class="navbar-nav navbar-left">
       <li class="nav-item active list-inline">
         <a class="nav-link" [routerLink]="['/company']">Compare Company</a>
       </li>
     </ul>
-    <ul class="navbar-nav navbar-left">
+    <ul [hidden]="isAdmin" class="navbar-nav navbar-left">
       <li class="nav-item active list-inline">
         <a class="nav-link" [routerLink]="['/sector']">Compare Sector</a>
       </li>
     </ul>
-    <ul class="navbar-nav navbar-left">
+    <ul [hidden]="isAdmin" class="navbar-nav navbar-left">
       <li class="nav-item active list-inline">
         <a class="nav-link" [routerLink]="['/profile']">Profile</a>
       </li>
     </ul>
-    <form class="form-inline mt-2 mt-md-0 ml-auto">
+    <form [hidden]="isAdmin" class="form-inline mt-2 mt-md-0 ml-auto">
       <button *ngIf="!isSignin" class="btn btn-outline-primary" type="submit" [routerLink]="['/sign-in']">Sign in</button>
+      <button *ngIf="isSignin" class="btn btn-outline-secondary" type="submit" (click)="signOut()">Sign Out</button>
+    </form>
+    <!--Admin-->
+    <ul [hidden]="!isAdmin" class="navbar-nav navbar-left">
+      <li class="nav-item active list-inline">
+        <a class="nav-link" [routerLink]="['/upload-data']">Upload Data</a>
+      </li>
+    </ul>
+    <ul [hidden]="!isAdmin" class="navbar-nav navbar-left">
+      <li class="nav-item active list-inline">
+        <a class="nav-link" [routerLink]="['/company']">Manage Company</a>
+      </li>
+    </ul>
+    <ul [hidden]="!isAdmin" class="navbar-nav navbar-left">
+      <li class="nav-item active list-inline">
+        <a class="nav-link" [routerLink]="['/sector']">Manage Sector</a>
+      </li>
+    </ul>
+    <ul [hidden]="!isAdmin" class="navbar-nav navbar-left">
+      <li class="nav-item active list-inline">
+        <a class="nav-link" [routerLink]="['/profile']">Manage IPO</a>
+      </li>
+    </ul>
+    <form [hidden]="!isAdmin" class="form-inline mt-2 mt-md-0 ml-auto">
+      <button *ngIf="!isSignin" class="btn btn-outline-primary" type="submit" [routerLink]="['/admin-sign-in']">Admin Sign In</button>
       <button *ngIf="isSignin" class="btn btn-outline-secondary" type="submit" (click)="signOut()">Sign Out</button>
     </form>
   </div>

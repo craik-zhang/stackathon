@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SectorService } from 'src/app/services/sector.service';
+import { SectorService } from 'src/app/services/user/sector.service';
 
 @Component({
     selector: 'app-sector',

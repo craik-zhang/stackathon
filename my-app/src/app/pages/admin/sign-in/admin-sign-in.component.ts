@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/services/user.service';
+import { UserService } from 'src/app/services/user/user.service';
 
 interface Alert {
   type: string;
@@ -10,12 +10,12 @@ interface Alert {
 const ALERTS: Alert[] = [];
 
 @Component({
-  selector: 'app-sign-in',
-  templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.css']
+  selector: 'app-admin-sign-in',
+  templateUrl: './admin-sign-in.component.html',
+  styleUrls: ['./admin-sign-in.component.css']
 })
 
-export class SignInComponent implements OnInit {
+export class AdminSignInComponent implements OnInit {
 
   alerts: Alert[];
 

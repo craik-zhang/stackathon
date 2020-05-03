@@ -1,5 +1,5 @@
 import { Component, OnInit, ContentChildren, QueryList, Input } from "@angular/core";
-import { IposService } from 'src/app/services/ipos.service';
+import { IposService } from 'src/app/services/user/ipos.service';
 
 interface IposItem {
     id: string;

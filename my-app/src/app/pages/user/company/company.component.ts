@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CompanyService } from 'src/app/services/company.service';
+import { CompanyService } from 'src/app/services/user/company.service';
 
 @Component({
     selector: 'app-company',
@@ -12,10 +12,6 @@ export class CompanyComponent implements OnInit {
 
   
     ngOnInit(): void {
-    //   this.iposService.allIpos().subscribe(data => {
-    //     console.log(JSON.stringify(data));
-    //   })
-    //   this.ipos = IPOS;
     }
   
   }

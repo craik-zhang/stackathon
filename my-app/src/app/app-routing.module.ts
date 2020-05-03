@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {SignInComponent} from './pages/sign-in/sign-in.component';
-import {ProductComponent} from './pages/product/product.component';
-import {ProductDetailComponent} from './pages/product-detail/product-detail.component';
 import {SigninGuard} from './guard/signin.guard';
-import { IposComponent } from './pages/ipos/ipos.component';
-import { CompanyComponent } from './pages/company/company.component';
-import { SectorComponent } from './pages/sector/sector.component';
-import { ProfileComponent } from './pages/profile/profile.component';
+import { AdminSignInComponent } from './pages/admin/sign-in/admin-sign-in.component';
+import { UploaderComponent } from './pages/admin/import-data/uploader.component';
+import { SignInComponent } from './pages/user/sign-in/sign-in.component';
+import { ProductComponent } from './pages/user/product/product.component';
+import { ProductDetailComponent } from './pages/user/product-detail/product-detail.component';
+import { IposComponent } from './pages/user/ipos/ipos.component';
+import { CompanyComponent } from './pages/user/company/company.component';
+import { SectorComponent } from './pages/user/sector/sector.component';
+import { ProfileComponent } from './pages/user/profile/profile.component';
 
 
 const routes: Routes = [
@@ -18,6 +20,10 @@ const routes: Routes = [
   { path: 'company', component: CompanyComponent},
   { path: 'sector', component: SectorComponent},
   { path: 'profile', component: ProfileComponent},
+
+  //admin
+  { path: 'admin-sign-in', component: AdminSignInComponent},
+  { path: 'upload-data', component: UploaderComponent},
 
 
 ];
