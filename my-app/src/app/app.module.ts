@@ -28,6 +28,9 @@ import { MoneyPipe } from './pipe/money.pipe';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JwtInterceptor } from './interceptor/jwt.interceptor';
+import { ManageCompanyComponent } from './pages/admin/manage-company/manage-company.component';
+import { ManageSectorComponent } from './pages/admin/manage-sector/manage-sector.component';
+import { UpdateIpoComponent } from './pages/admin/update-ipo/update-ipo.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { JwtInterceptor } from './interceptor/jwt.interceptor';
     MoneyPipe,
     //admin
     AdminSignInComponent,
-    UploaderComponent
+    UploaderComponent,
+    ManageCompanyComponent,
+    ManageSectorComponent,
+    UpdateIpoComponent,
   ],
   imports: [
     AppRoutingModule,

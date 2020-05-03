@@ -10,6 +10,9 @@ import { IposComponent } from './pages/user/ipos/ipos.component';
 import { CompanyComponent } from './pages/user/company/company.component';
 import { SectorComponent } from './pages/user/sector/sector.component';
 import { ProfileComponent } from './pages/user/profile/profile.component';
+import { ManageCompanyComponent } from './pages/admin/manage-company/manage-company.component';
+import { ManageSectorComponent } from './pages/admin/manage-sector/manage-sector.component';
+import { UpdateIpoComponent } from './pages/admin/update-ipo/update-ipo.component';
 
 
 const routes: Routes = [
@@ -24,6 +27,9 @@ const routes: Routes = [
   //admin
   { path: 'admin-sign-in', component: AdminSignInComponent},
   { path: 'upload-data', component: UploaderComponent},
+  { path: 'manage-company', component: ManageCompanyComponent},
+  { path: 'manage-sector', component: ManageSectorComponent},
+  { path: 'update-ipo', component: UpdateIpoComponent},
 
 
 ];

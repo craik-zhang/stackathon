@@ -34,17 +34,17 @@
     </ul>
     <ul [hidden]="!isAdmin" class="navbar-nav navbar-left">
       <li class="nav-item active list-inline">
-        <a class="nav-link" [routerLink]="['/company']">Manage Company</a>
+        <a class="nav-link" [routerLink]="['/manage-company']">Manage Company</a>
       </li>
     </ul>
     <ul [hidden]="!isAdmin" class="navbar-nav navbar-left">
       <li class="nav-item active list-inline">
-        <a class="nav-link" [routerLink]="['/sector']">Manage Sector</a>
+        <a class="nav-link" [routerLink]="['/manage-sector']">Manage Sector</a>
       </li>
     </ul>
     <ul [hidden]="!isAdmin" class="navbar-nav navbar-left">
       <li class="nav-item active list-inline">
-        <a class="nav-link" [routerLink]="['/profile']">Manage IPO</a>
+        <a class="nav-link" [routerLink]="['/update-ipo']">Update IPO</a>
       </li>
     </ul>
     <form [hidden]="!isAdmin" class="form-inline mt-2 mt-md-0 ml-auto">
