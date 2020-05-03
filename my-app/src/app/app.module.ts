@@ -31,6 +31,8 @@ import { JwtInterceptor } from './interceptor/jwt.interceptor';
 import { ManageCompanyComponent } from './pages/admin/manage-company/manage-company.component';
 import { ManageSectorComponent } from './pages/admin/manage-sector/manage-sector.component';
 import { UpdateIpoComponent } from './pages/admin/update-ipo/update-ipo.component';
+import { ProfileComponent } from './pages/user/profile/profile.component';
+import { DetailCompanyComponent } from './pages/admin/detail-company/detail-company.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { UpdateIpoComponent } from './pages/admin/update-ipo/update-ipo.componen
     IposComponent,
     CompanyComponent,
     SectorComponent,
+    ProfileComponent,
     NavbarComponent,
     FooterComponent,
     SignInComponent,
@@ -50,17 +53,20 @@ import { UpdateIpoComponent } from './pages/admin/update-ipo/update-ipo.componen
     ManageCompanyComponent,
     ManageSectorComponent,
     UpdateIpoComponent,
+    DetailCompanyComponent,
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     NgbAlertModule,
     ReactiveFormsModule,
     NgxFileUploadCoreModule,
     NgxFileUploadUiCommonModule,
+    
   ],
   providers: [MessageService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }

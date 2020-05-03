@@ -1,0 +1,56 @@
+<p>detail-company works!</p>
+<form [formGroup]="companyForm" (ngSubmit)="onSubmit()">
+    <label>
+      Name:
+      <input type="text" formControlName="name" required>
+    </label>
+  
+    <label>
+      CEO:
+      <input type="text" formControlName="ceo">
+    </label>
+  
+    <label>
+      TurnOver:
+        <input type="text" formControlName="turnOver">
+    </label>
+
+    <label>
+      Board of Directors:
+        <input type="text" formControlName="boardOfDirectors">
+    </label>
+
+    <label>
+        Brief:
+        <input type="text" formControlName="brief">
+    </label>
+  
+    <!-- <div formArrayName="aliases">
+      <h3>Aliases</h3> <button (click)="addAlias()">Add Alias</button>
+  
+      <div *ngFor="let alias of aliases.controls; let i=index">
+        <label>
+          Alias:
+          <input type="text" [formControlName]="i">
+        </label>
+      </div>
+    </div> -->
+  
+    <button type="submit" [disabled]="!companyForm.valid">Submit</button>
+  </form>
+  
+  <hr>
+  
+  
+  <p>
+    Form Value: {{ companyForm.value | json }}
+  </p>
+  
+  
+  <p>
+    Form Status: {{ companyForm.status }}
+  </p>
+  
+  <p>
+    <button (click)="updateProfile()">Create New Company</button>
+  </p>

@@ -1,1 +1,33 @@
-<h2>Sector Selection</h2>
+<h2>Compare Secotr</h2>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <label>
+      Select Company/Sector:
+      <input type="text" formControlName="companyOrSectorOption" required>
+    </label>
+  
+    <label>
+      Select Stock Exchange:
+      <input type="text" formControlName="exchange">
+    </label>
+
+    <label>
+        Sector Name:
+        <input type="text" formControlName="sectorName">
+      </label>
+  
+    <div formGroupName="period">
+      <h3>Period</h3>
+  
+      <label>
+        From:
+        <input type="text" formControlName="fromPeriod">
+      </label>
+  
+      <label>
+        To:
+        <input type="text" formControlName="toPeriod">
+      </label>
+    </div>
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+  </form>
+  <hr>

@@ -1,21 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { SectorService } from 'src/app/services/user/sector.service';
+import { CompanyService } from 'src/app/services/user/company.service';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
-    selector: 'app-sector',
+    selector: 'app-company',
     templateUrl: './sector.component.html',
     styleUrls: ['./sector.component.css']
 })
 export class SectorComponent implements OnInit {
 
-    constructor(private sectorService: SectorService) { }
-
-  
+    constructor(private fb: FormBuilder) { }
     ngOnInit(): void {
-    //   this.iposService.allIpos().subscribe(data => {
-    //     console.log(JSON.stringify(data));
-    //   })
-    //   this.ipos = IPOS;
     }
+
+    profileForm = this.fb.group({
+        companyOrSectorOption: ['', Validators.required],
+        exchange: [''],
+        sectorName: [''],
+        period: this.fb.group({
+          fromPeriod: [''],
+          toPeriod: [''],
+        }),
+      });
+
+      onSubmit() {
+        // TODO: Use EventEmitter with form value
+        console.warn(this.profileForm.value);
+      }
   
   }

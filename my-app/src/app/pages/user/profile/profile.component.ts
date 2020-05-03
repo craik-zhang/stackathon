@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from 'src/app/services/user/profile.service';
+import { FormBuilder, Validators, FormArray } from '@angular/forms';
 
 @Component({
     selector: 'app-profile',
@@ -7,15 +7,44 @@ import { ProfileService } from 'src/app/services/user/profile.service';
     styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  constructor(private fb: FormBuilder) { }
+  ngOnInit(): void {
+    throw new Error("Method not implemented.");
+  }
+  profileForm = this.fb.group({
+    firstName: ['', Validators.required],
+    lastName: [''],
+    address: this.fb.group({
+      street: [''],
+      city: [''],
+      state: [''],
+      zip: ['']
+    }),
+    aliases: this.fb.array([
+      this.fb.control('')
+    ])
+  });
 
-    constructor(private profileService: ProfileService) { }
+  get aliases() {
+    return this.profileForm.get('aliases') as FormArray;
+  }
 
-  
-    ngOnInit(): void {
-    //   this.iposService.allIpos().subscribe(data => {
-    //     console.log(JSON.stringify(data));
-    //   })
-    //   this.ipos = IPOS;
-    }
+  updateProfile() {
+    this.profileForm.patchValue({
+      firstName: 'Nancy',
+      address: {
+        street: '123 Drew Street'
+      }
+    });
+  }
+
+  addAlias() {
+    this.aliases.push(this.fb.control(''));
+  }
+
+  onSubmit() {
+    // TODO: Use EventEmitter with form value
+    console.warn(this.profileForm.value);
+  }
   
   }

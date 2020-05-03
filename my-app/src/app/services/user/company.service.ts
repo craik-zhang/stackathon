@@ -11,9 +11,19 @@ const httpOptions = {
 })
 
 export class CompanyService {
-    constructor(private http: HttpClient) { }
+    getValue(): any {
+        return "real value";
+    }
+    getObservableValue() {
+      throw new Error("Method not implemented.");
+    }
+    getPromiseValue() {
+      throw new Error("Method not implemented.");
+    }
+    constructor() { }
 
     getCompanyByName() {
-        return this.http.get(`${environment.baseUrl}/company/companyName`, httpOptions);
+        // return this.http.get(`${environment.baseUrl}/company/companyName`, httpOptions);
+        return "Google";
     }
 }

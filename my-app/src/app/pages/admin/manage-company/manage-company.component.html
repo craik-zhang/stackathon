@@ -1,1 +1,41 @@
 <p>manage-company works!</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Pic</th>
+            <th>Company Name</th>
+            <th>Stock Exchange</th>
+            <th>Brief</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let company of companies">
+            <td>
+                <a [title]="company.companyName + ' details'">
+                    {{ company.id }}
+                </a>
+            </td>
+            <td>
+                <a [title]="company.companyName + ' details'">
+                    {{ company.companyName }}
+                </a>
+            </td>
+            <td>
+                <a *ngIf="company.stockExchange">
+                    {{ company.stockExchange }}
+                </a>
+            </td>
+            <td>
+                <a *ngIf="company.brief">
+                    {{ company.brief }}
+                </a>
+            </td>
+            <td>
+                <button (click)="edit()">
+                    Edit
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

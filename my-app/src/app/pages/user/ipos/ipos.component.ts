@@ -16,15 +16,25 @@ const IPOS: IposItem[] = [{
     pricePerShare: "123",
     stockExchange: "BSE",
     shareNumber: 3299,
-    companyName: 'iphone se',
+    companyName: 'Google',
     openDate: new Date(),
     remarks: 'iPhone SE packs A13 Bionic, Portrait mode, 4K video, Touch ID, a Retina HD display, and great battery life into a 4.7” design',
-  }, {
+  }, 
+  {
     id: '2',
     pricePerShare: "456",
     stockExchange: "NSE",
     shareNumber: 4299,
-    companyName: 'iphone se',
+    companyName: 'Oracle',
+    openDate: new Date(),
+    remarks: 'iPhone SE packs A13 Bionic, Portrait mode, 4K video, Touch ID, a Retina HD display, and great battery life into a 4.7” design',
+  },
+  {
+    id: '3',
+    pricePerShare: "999",
+    stockExchange: "NSE",
+    shareNumber: 9999,
+    companyName: 'Alibaba',
     openDate: new Date(),
     remarks: 'iPhone SE packs A13 Bionic, Portrait mode, 4K video, Touch ID, a Retina HD display, and great battery life into a 4.7” design',
   }

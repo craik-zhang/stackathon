@@ -13,6 +13,7 @@ import { ProfileComponent } from './pages/user/profile/profile.component';
 import { ManageCompanyComponent } from './pages/admin/manage-company/manage-company.component';
 import { ManageSectorComponent } from './pages/admin/manage-sector/manage-sector.component';
 import { UpdateIpoComponent } from './pages/admin/update-ipo/update-ipo.component';
+import { DetailCompanyComponent } from './pages/admin/detail-company/detail-company.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'admin-sign-in', component: AdminSignInComponent},
   { path: 'upload-data', component: UploaderComponent},
   { path: 'manage-company', component: ManageCompanyComponent},
+  { path: 'manage-company/:id', component: DetailCompanyComponent},
   { path: 'manage-sector', component: ManageSectorComponent},
   { path: 'update-ipo', component: UpdateIpoComponent},
 
