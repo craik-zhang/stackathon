@@ -14,6 +14,7 @@ import { ManageCompanyComponent } from './pages/admin/manage-company/manage-comp
 import { ManageSectorComponent } from './pages/admin/manage-sector/manage-sector.component';
 import { UpdateIpoComponent } from './pages/admin/update-ipo/update-ipo.component';
 import { DetailCompanyComponent } from './pages/admin/detail-company/detail-company.component';
+import { FusionChartComponent } from './component/common/fusion-chart/fusion-chart.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,8 @@ const routes: Routes = [
   { path: 'company', component: CompanyComponent},
   { path: 'sector', component: SectorComponent},
   { path: 'profile', component: ProfileComponent},
+  { path: 'company/compare', component: FusionChartComponent},
+  { path: 'sector/compare', component: FusionChartComponent},
 
   //admin
   { path: 'admin-sign-in', component: AdminSignInComponent},

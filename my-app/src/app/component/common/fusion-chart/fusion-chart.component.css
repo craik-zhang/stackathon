@@ -1,0 +1,19 @@
+/* div.intro1 {
+    width:300px;
+    height:auto;
+    float:left;
+    display:inline;
+  }
+div.intro2 {
+    width:300px;
+    height:auto;
+    float:left;
+    display:inline;
+  } */
+
+  div {
+    width:400px;
+    height:auto;
+    float:left;
+    display:inline;
+  }

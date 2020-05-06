@@ -11,6 +11,7 @@ import { NgxFileUploadUiCommonModule } from "@ngx-file-upload/ui";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FusionChartsModule } from "angular-fusioncharts";
 
 //admin
 import { AdminSignInComponent } from './pages/admin/sign-in/admin-sign-in.component';
@@ -33,7 +34,13 @@ import { ManageSectorComponent } from './pages/admin/manage-sector/manage-sector
 import { UpdateIpoComponent } from './pages/admin/update-ipo/update-ipo.component';
 import { ProfileComponent } from './pages/user/profile/profile.component';
 import { DetailCompanyComponent } from './pages/admin/detail-company/detail-company.component';
-
+import { FusionChartComponent } from './component/common/fusion-chart/fusion-chart.component';
+// Import FusionCharts library and chart modules
+import * as FusionCharts from "fusioncharts";
+import * as charts from "fusioncharts/fusioncharts.charts";
+import * as FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
+// Pass the fusioncharts library and chart modules
+FusionChartsModule.fcRoot(FusionCharts, charts, FusionTheme);
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +61,7 @@ import { DetailCompanyComponent } from './pages/admin/detail-company/detail-comp
     ManageSectorComponent,
     UpdateIpoComponent,
     DetailCompanyComponent,
+    FusionChartComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -66,6 +74,7 @@ import { DetailCompanyComponent } from './pages/admin/detail-company/detail-comp
     ReactiveFormsModule,
     NgxFileUploadCoreModule,
     NgxFileUploadUiCommonModule,
+    FusionChartsModule,
     
   ],
   providers: [MessageService,
